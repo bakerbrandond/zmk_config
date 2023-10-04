@@ -36,14 +36,14 @@
                  label = "TAP_DANCE_1";
                  #binding-cells = <0>;
                  tapping-term-ms = <200>;
-                 bindings = <&kp LCTL>, <&kp LGUI>, <&kp LCTL &kp LGUI>;
+                 bindings = <&kp LCTL>, <&kp LGUI>, <&kp LGUI &kp LCTL>;
                };
           td2: tap_dance_2 {
                  compatible = "zmk,behavior-tap-dance";
                  label = "TAP_DANCE_2";
                  #binding-cells = <0>;
                  tapping-term-ms = <200>;
-                 bindings = <&kp RALT>, <&kp LGUI>, <&kp RALT &kp LGUI>;
+                 bindings = <&kp RALT>, <&kp LGUI>, <&kp LGUI &kp RALT>;
                };
         };
         keymap {
