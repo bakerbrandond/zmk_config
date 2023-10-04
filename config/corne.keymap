@@ -36,14 +36,14 @@
                  label = "TAP_DANCE_1";
                  #binding-cells = <0>;
                  tapping-term-ms = <200>;
-                 bindings = <&kp LCTL>, <&kp LGUI>, <&none>;
+                 bindings = <&kp LCTL>, <&kp LGUI>, <&kp LCTL &kp LGUI>;
                };
           td2: tap_dance_2 {
                  compatible = "zmk,behavior-tap-dance";
                  label = "TAP_DANCE_2";
                  #binding-cells = <0>;
                  tapping-term-ms = <200>;
-                 bindings = <&kp LALT>, <&kp LGUI>, <&none>;
+                 bindings = <&kp RALT>, <&kp LGUI>, <&kp RALT &kp LGUI>;
                };
         };
         keymap {
@@ -89,7 +89,7 @@
  //                                 ,--------------------------------.           ,----------,---------------------.
  //                                 |           |  LOWER |           |           |          |   RAISE  |    Del   |
  //                                 `---------------------|          |           |  Enter   |----------+----------.
-                    	                 &none     &mo 1        &none             &kp RET       &mo 3     &kp DEL
+                    	                 &none     &mo 1      &none             &kp RET        &mo 3     &kp DEL
  //                                                       |          |           |          |
  //                                                       `----------'           `----------'
                         >;
@@ -105,13 +105,13 @@
  // |          |    Tab   |          |          |          |          |           |          |     -    |     =    |     [    |     ]    |          |
        &none    &kp TAB   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT                 &none    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT     &none
  // |----------+----------+----------+----------+----------+----------|           |----------+----------+----------+----------+----------+----------|
- // |          |    Ctl   |     ~    |   Gui    |   TD2    |          |           |          |          |          |     \    |     '    |          |
-       &none    &kp LCTL   &kp GRAVE  &kp LGUI     &td2       &none                  &none      &none      &none    &kp BSLH    &kp SQT &none
+ // |          |    Ctl   |     ~    |   Gui    |          |          |           |          |          |          |     \    |     '    |          |
+       &none    &kp LCTL   &kp GRAVE  &kp LGUI     &none      &none                  &none      &none      &none    &kp BSLH    &kp SQT &none
  // `-----------------------------------------------------------------'           `-----------------------------------------------------------------'
  //                                 ,--------------------------------.           ,----------,---------------------.
- //                                 |           |         |          |           |          |          |    Alt   |
+ //                                 |           |         |          |           |          |          |    TD2   |
  //                                 `---------------------|          |           |  Enter   |----------+----------.
-                                      &kp LGUI    &none  &kp SPACE              &kp RET        &none    &kp RALT
+                                      &kp LGUI    &none  &kp SPACE              &kp RET        &none       &td2
  //                                                       |          |           |          |
  //                                                       `----------'           `----------'
                         >;
