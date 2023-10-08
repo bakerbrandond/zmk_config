@@ -31,20 +31,6 @@
                  tapping-term-ms = <200>;
                  bindings = <&mo 1>, <&mo 4>, <&tog 4>;
                };
-          td1: tap_dance_1 {
-                 compatible = "zmk,behavior-tap-dance";
-                 label = "TAP_DANCE_1";
-                 #binding-cells = <0>;
-                 tapping-term-ms = <200>;
-                 bindings = <&kp LCTL>, <&kp LGUI>, <&macro_press &kp LGUI &kp LCTL>;
-               };
-          td2: tap_dance_2 {
-                 compatible = "zmk,behavior-tap-dance";
-                 label = "TAP_DANCE_2";
-                 #binding-cells = <0>;
-                 tapping-term-ms = <200>;
-                 bindings = <&kp RALT>, <&kp LGUI>, <&macro_press &kp LGUI &kp RALT>;
-               };
           pht: left_hand_positional_hold_tap {
               compatible = "zmk,behavior-hold-tap";
               label = "LEFT_POSITIONAL_HOLD_TAP";
@@ -53,7 +39,7 @@
               tapping-term-ms = <400>;                            // <---[[produces tap if held longer than tapping-term-ms]]
               quick-tap-ms = <200>;
               bindings = <&kp>, <&kp>;
-              hold-trigger-key-positions = <18 19 20 21 22 23>;   // <---[[right-hand keys]]
+              hold-trigger-key-positions = <18 19 20 21 22 23>;   // <---[[right-hand home row keys]]
           };
         };
         keymap {
@@ -75,9 +61,9 @@
         &none    &kp Z      &kp X      &kp C      &kp V      &kp B                  &kp N      &kp M     &kp COMMA   &kp DOT   &kp FSLH     &none
  // `-----------------------------------------------------------------'           `-----------------------------------------------------------------'
  //                                 ,--------------------------------.           ,----------,---------------------.
- //                                 |   Ctrl   |   TAP0  |           |           |          |   RAISE  |   Shift  |
+ //                                 |   LCTL   |   TAP0   |          |           |          |   RAISE  |   Shift  |
  //                                 `---------------------|   Space  |           |  BckSpc  |----------+----------.
-                                        &td1       &td0   &kp SPACE              &kp BSPC      &mo 2    &kp LSHFT
+                                      &kp LCTL     &td0   &kp SPACE              &kp BSPC      &mo 2    &kp LSHFT
  //                                                       |          |           |          |
  //                                                       `----------'           `----------'
                         >;
@@ -115,13 +101,13 @@
  // |          |    Tab   |          |          |          |          |           |          |     -    |     =    |     [    |     ]    |          |
        &none    &kp TAB   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT                 &none    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT     &none
  // |----------+----------+----------+----------+----------+----------|           |----------+----------+----------+----------+----------+----------|
- // |          |    Ctl   |     ~    |   Gui    |          |          |           |          |          |          |     \    |     '    |          |
-       &none    &kp LCTL   &kp GRAVE  &kp LGUI     &none      &none                  &none      &none      &none    &kp BSLH    &kp SQT &none
+ // |          |    Ctl   |     ~    |   Gui    |  LALT    |          |           |          |          |          |     \    |     '    |          |
+       &none    &kp LCTL   &kp GRAVE  &kp LGUI   &kp LATL     &none                  &none      &none      &none    &kp BSLH    &kp SQT &none
  // `-----------------------------------------------------------------'           `-----------------------------------------------------------------'
  //                                 ,--------------------------------.           ,----------,---------------------.
- //                                 |           |         |          |           |          |          |    TD2   |
- //                                 `---------------------|          |           |  Enter   |----------+----------.
-                                      &kp LGUI    &none  &kp SPACE              &kp RET        &none       &td2
+ //                                 |           |         |          |           |          |          |          |
+ //                                 `---------------------|          |           |          |----------+----------.
+                                      &kp LGUI    &none      &none                 &none        &none     &none
  //                                                       |          |           |          |
  //                                                       `----------'           `----------'
                         >;
