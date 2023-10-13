@@ -80,7 +80,7 @@
   &bt BT_SEL 1  &kp ESC      &none    &mkp MCLK  &mkp LCLK  &mkp RCLK                &none    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC   &bt BT_SEL 4
  // |----------+----------+----------+----------+----------+----------|           |----------+----------+----------+----------+----------+----------|
  // |          |    Caps  |     ~    |  LALT    |          |          |           |          |          |          |     |    |     "    |          |
-  &bt BT_SEL 2  &kp CAPS   &kp TILDE  &kp LATL     &none      &none                &bt BT_CLR   &none      &none     &kp PIPE   &kp DQT   &bt BT_SEL 5
+  &bt BT_SEL 2  &kp CAPS   &kp TILDE  &kp LALT     &none      &none                &bt BT_CLR   &none      &none     &kp PIPE   &kp DQT   &bt BT_SEL 5
  // `-----------------------------------------------------------------'           `-----------------------------------------------------------------'
  //                                 ,--------------------------------.           ,----------,---------------------.
  //                                 |           |  LOWER |           |           |          |   RAISE  |    Del   |
