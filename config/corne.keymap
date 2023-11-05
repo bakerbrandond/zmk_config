@@ -65,7 +65,7 @@
  //                                 ,--------------------------------.           ,----------,---------------------.
  //                                 |   LCTL   |   TAP0   |          |           |          |   RAISE  |   Shift  |
  //                                 `---------------------|   Space  |           |  BckSpc  |----------+----------.
-                                      &kp LCTL     &td0   &pht LALT SPACE       &pht LGUI BSPC &mo 2    &kp LSHFT
+                                      &kp LCTL     &td0   &kp SPACE              &kp BSPC        &mo 2    &kp LSHFT
  //                                                       |          |           |          |
  //                                                       `----------'           `----------'
                         >;
@@ -81,13 +81,13 @@
  // |          |    Esc   |          |   MCLK   |   LCLK   |   RCLK   |           |          |     _    |     +    |     {    |     }    |          |
   &bt BT_SEL 1  &kp ESC      &none    &mkp MCLK  &mkp LCLK  &mkp RCLK                &none    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC   &bt BT_SEL 4
  // |----------+----------+----------+----------+----------+----------|           |----------+----------+----------+----------+----------+----------|
- // |          |    Caps  |     ~    |  LALT    |          |          |           |          |          |          |     |    |     "    |          |
-  &bt BT_SEL 2  &kp CAPS   &kp TILDE  &kp LALT     &none      &none                &bt BT_CLR   &none      &none     &kp PIPE   &kp DQT   &bt BT_SEL 5
+ // |          |    Caps  |     ~    |          |          |          |           |          |          |          |     |    |     "    |          |
+  &bt BT_SEL 2  &kp CAPS   &kp TILDE     &none     &none      &none                &bt BT_CLR   &none      &none     &kp PIPE   &kp DQT   &bt BT_SEL 5
  // `-----------------------------------------------------------------'           `-----------------------------------------------------------------'
  //                                 ,--------------------------------.           ,----------,---------------------.
  //                                 |           |  LOWER |           |           |          |   RAISE  |    Del   |
  //                                 `---------------------|          |           |  Enter   |----------+----------.
-                    	                 &none     &mo 1      &none             &kp RET        &mo 3     &kp DEL
+                                         &none     &mo 1      &none             &kp RET        &mo 3     &kp DEL
  //                                                       |          |           |          |
  //                                                       `----------'           `----------'
                         >;
@@ -103,13 +103,13 @@
  // |          |    Tab   |          |          |          |          |           |          |     -    |     =    |     [    |     ]    |          |
        &none    &kp TAB   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT                 &none    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT     &none
  // |----------+----------+----------+----------+----------+----------|           |----------+----------+----------+----------+----------+----------|
- // |          |    Ctl   |     ~    |   Gui    |          |          |           |          |          |          |     \    |     '    |          |
-       &none    &kp LCTL   &kp GRAVE  &kp LGUI      &none     &none                  &none      &none      &none    &kp BSLH    &kp SQT &none
+ // |          |    Ctl   |     ~    |   Gui    |   LALT   |          |           |          |          |          |     \    |     '    |          |
+       &none    &kp LCTL   &kp GRAVE  &kp LGUI    &kp LALT    &none                  &none      &none      &none    &kp BSLH    &kp SQT &none
  // `-----------------------------------------------------------------'           `-----------------------------------------------------------------'
  //                                 ,--------------------------------.           ,----------,---------------------.
  //                                 |           |         |          |           |          |          |          |
  //                                 `---------------------|          |           |          |----------+----------.
-                                        &none    &none       &none                 &none        &none     &none
+                                         &none    &none       &none                 &none        &none     &none
  //                                                       |          |           |          |
  //                                                       `----------'           `----------'
                         >;
