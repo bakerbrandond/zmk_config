@@ -26,6 +26,27 @@
                  tapping-term-ms = <200>;
                  bindings = <&none>, <&sys_reset>, <&bootloader>;
                };
+          tdc: tap_dance_ctl {
+                 compatible = "zmk,behavior-tap-dance";
+                 label = "TAP_DANCE_R";
+                 #binding-cells = <0>;
+                 tapping-term-ms = <200>;
+                 bindings = <&kp LCTL>, <&kp LGUI>, <&macro_press &kp LGUI &kp LCTL>;
+               };
+          tda: tap_dance_alt {
+                 compatible = "zmk,behavior-tap-dance";
+                 label = "TAP_DANCE_R";
+                 #binding-cells = <0>;
+                 tapping-term-ms = <200>;
+                 bindings = <&kp LALT>, <&kp LGUI>, <&macro_press &kp LGUI &kp LALT>;
+               };
+          tds: tap_dance_shf {
+                 compatible = "zmk,behavior-tap-dance";
+                 label = "TAP_DANCE_R";
+                 #binding-cells = <0>;
+                 tapping-term-ms = <200>;
+                 bindings = <&kp LSHFT>, <&kp LALT>, <&macro_press &kp LGUI &kp LSHFT &kp LALT>;
+               };
           td0: tap_dance_0 {
                  compatible = "zmk,behavior-tap-dance";
                  label = "TAP_DANCE_0";
@@ -63,9 +84,9 @@
         &none    &kp Z      &kp X      &kp C      &kp V      &kp B                  &kp N      &kp M     &kp COMMA   &kp DOT   &kp FSLH     &none
  // `-----------------------------------------------------------------'           `-----------------------------------------------------------------'
  //                                 ,--------------------------------.           ,----------,---------------------.
- //                                 |   LCTL   |   TAP0   |          |           |          |   RAISE  |   Shift  |
+ //                                 |   TDC    |   TAP0   |          |           |          |   RAISE  |   TDS    |
  //                                 `---------------------|   Space  |           |  BckSpc  |----------+----------.
-                                      &sk LCTL     &td0   &kp SPACE              &kp BSPC        &mo 2    &kp LSHFT
+                                        &tdc       &td0   &kp SPACE              &kp BSPC        &mo 2    &tds
  //                                                       |          |           |          |
  //                                                       `----------'           `----------'
                         >;
@@ -107,9 +128,9 @@
        &none      &none    &kp GRAVE    &none      &none      &none                  &none      &none      &none    &kp BSLH    &kp SQT &none
  // `-----------------------------------------------------------------'           `-----------------------------------------------------------------'
  //                                 ,--------------------------------.           ,----------,---------------------.
- //                                 |   LGUI    |         |          |           |          |          |    LALT  |
+ //                                 |           |         |          |           |          |          |   TDA    |
  //                                 `---------------------|          |           |          |----------+----------.
-                                       &sk LGUI   &none       &none                 &none        &none   &sk LALT
+                                       &none      &none       &none                 &none        &none    &tda
  //                                                       |          |           |          |
  //                                                       `----------'           `----------'
                         >;
