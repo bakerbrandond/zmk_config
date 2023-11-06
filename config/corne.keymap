@@ -21,35 +21,35 @@
         behaviors {
           tdr: tap_dance_r {
                  compatible = "zmk,behavior-tap-dance";
-                 label = "TAP_DANCE_R";
+                 label = "TAP_DANCE_RESET";
                  #binding-cells = <0>;
                  tapping-term-ms = <200>;
                  bindings = <&none>, <&sys_reset>, <&bootloader>;
                };
           tdc: tap_dance_ctl {
                  compatible = "zmk,behavior-tap-dance";
-                 label = "TAP_DANCE_R";
+                 label = "TAP_DANCE_LCTL";
                  #binding-cells = <0>;
                  tapping-term-ms = <200>;
                  bindings = <&kp LCTL>, <&kp LGUI>, <&macro_press &kp LGUI &kp LCTL>;
                };
           tda: tap_dance_alt {
                  compatible = "zmk,behavior-tap-dance";
-                 label = "TAP_DANCE_R";
+                 label = "TAP_DANCE_LALT";
                  #binding-cells = <0>;
                  tapping-term-ms = <200>;
                  bindings = <&kp LALT>, <&kp LGUI>, <&macro_press &kp LGUI &kp LALT>;
                };
           tds: tap_dance_shf {
                  compatible = "zmk,behavior-tap-dance";
-                 label = "TAP_DANCE_R";
+                 label = "TAP_DANCE_LSHFT";
                  #binding-cells = <0>;
                  tapping-term-ms = <200>;
                  bindings = <&kp LSHFT>, <&kp LALT>, <&macro_press &kp LGUI &kp LSHFT &kp LALT>;
                };
           td0: tap_dance_0 {
                  compatible = "zmk,behavior-tap-dance";
-                 label = "TAP_DANCE_0";
+                 label = "TAP_DANCE_MOUSE";
                  #binding-cells = <0>;
                  tapping-term-ms = <200>;
                  bindings = <&mo 1>, <&mo 4>, <&tog 4>;
