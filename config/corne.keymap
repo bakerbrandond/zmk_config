@@ -31,21 +31,21 @@
                  label = "TAP_DANCE_LCTL";
                  #binding-cells = <0>;
                  tapping-term-ms = <200>;
-                 bindings = <&kp LCTL>, <&kp LGUI>, <&kp LGUI &kp LCTL>;
+                 bindings = <&kp LCTL>, <&kp LGUI>, <&kp LC(LGUI)>;
                };
           tda: tap_dance_alt {
                  compatible = "zmk,behavior-tap-dance";
                  label = "TAP_DANCE_LALT";
                  #binding-cells = <0>;
                  tapping-term-ms = <200>;
-                 bindings = <&kp LALT>, <&kp LGUI>, <&kp LGUI &kp LALT>;
+                 bindings = <&kp LALT>, <&kp LGUI>, <&kp LA(LGUI)>;
                };
           tds: tap_dance_shf {
                  compatible = "zmk,behavior-tap-dance";
                  label = "TAP_DANCE_LSHFT";
                  #binding-cells = <0>;
                  tapping-term-ms = <200>;
-                 bindings = <&kp LSHFT>, <&kp LALT>, <&kp LGUI &kp LSHFT &kp LALT>;
+                 bindings = <&kp LSHFT>, <&kp LALT>, <&kp LS(LA(LGUI))>;
                };
           td0: tap_dance_0 {
                  compatible = "zmk,behavior-tap-dance";
