@@ -75,8 +75,7 @@ ZMK_LAYER(low_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
           &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT         &kp CARET     &kp AMPS      &kp STAR      &kp LPAR      &kp RPAR
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &hrm LGUI ESC &hrm LALT LALT &hrm LCTRL U_BTN3 ___           ___               ___           ___           ___           ___           ___
-        //&hrm LGUI ESC &hrm LALT LALT &hrm LCTRL U_BTN3 &hrm LSHFT U_BTN1 &kp U_BTN2  &kp H        &hrm RSHFT UNDER &hrm LCTRL PLUS  &hrm LALT LBRC   &hrm LGUI RBRC
+          &hrm LGUI ESC &hrm LALT LALT &hrm LCTRL LCTRL &hrm LSHFT LSHFT ___        ___       &hrm RSHFT UNDER &hrm LCTRL PLUS &hrm LALT LBRC &hrm LGUI RBRC
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &kp CAPS      &kp TILDE     ___           ___           ___               ___           ___           ___           &kp PIPE      &kp DQT
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
