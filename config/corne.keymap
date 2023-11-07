@@ -15,6 +15,7 @@
 #define GER 3
 
 /* custom behaviors */
+#include "mouse.dtsi"
 
 // homerow mods
 ZMK_BEHAVIOR(hrm, hold_tap,
