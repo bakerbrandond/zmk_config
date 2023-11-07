@@ -110,18 +110,14 @@
                         bindings = <
  // ,-----------------------------------------------------------------.           ,-----------------------------------------------------------------.
  // |          |     1    |     2    |     3    |     4    |     5    |           |     6    |     7    |     8    |     9    |     0    |          |
-       ___    &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                 &kp N6     &kp N7     &kp N8     &kp N9     &kp N0       ___
  // |----------+----------+----------+----------+----------+----------|           |----------+----------+----------+----------+----------+----------|
  // |          |    Tab   |          |          |          |          |           |          |     -    |     =    |     [    |     ]    |          |
-       ___    &kp TAB   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT                 ___    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT     ___
  // |----------+----------+----------+----------+----------+----------|           |----------+----------+----------+----------+----------+----------|
  // |          |          |     `    |          |          |          |           |          |          |          |     \    |     '    |          |
-       ___      ___    &kp GRAVE    ___      ___      ___                  ___      ___      ___    &kp BSLH    &kp SQT ___
  // `-----------------------------------------------------------------'           `-----------------------------------------------------------------'
  //                                 ,--------------------------------.           ,----------,---------------------.
  //                                 |           |         |          |           |          |          |          |
  //                                 `---------------------|          |           |          |----------+----------.
-                                       ___      ___       ___                 ___        ___    ___
  //                                                       |          |           |          |
  //                                                       `----------'           `----------'
                         >;
@@ -188,7 +184,7 @@
 
 #define DEF 0  // layer shortcuts, must match order in which they are defined below
 #define LOW 1
-#define NUM 2
+#define RAS 2
 #define GER 3
 
 //#include "combos.dtsi"  // requires layer aliases
@@ -210,9 +206,9 @@ ZMK_BEHAVIOR(ss_cw, tap_dance,
     bindings = <&sk LSHFT>, <&caps_word>;
 )
 
-// tap: backspace | shift + tap: delete | hold: num layer
+// tap: backspace | shift + tap: delete | hold: RAS layer
 ZMK_BEHAVIOR(bs_del_num, mod_morph,
-    bindings = <&lt NUM BSPC>, <&kp DEL>;
+    bindings = <&lt RAS BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
@@ -226,8 +222,8 @@ ZMK_BEHAVIOR(win_sleep, macro,
 // euro sign
 ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
 
-// replace a/o/u/s with German umlauts when LOW and NUM are held jointly
-ZMK_CONDITIONAL_LAYER(LOW NUM, GER)
+// replace a/o/u/s with German umlauts when LOW and RAS are held jointly
+ZMK_CONDITIONAL_LAYER(LOW RAS, GER)
 
 // combos
 //#undef COMBO_TERM
@@ -262,19 +258,18 @@ ZMK_LAYER(low_layer,
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
-/*
-ZMK_LAYER(nav_layer,
+ZMK_LAYER(ras_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          ___           ___           ___           ___           ___               &kp PG_UP     &kp HOME      &kp UP        &kp END       &kp INS
+          &kp N1        &kp N2        &kp N3        &kp N4        &kp N5            &kp N6        &kp N7        &kp N8        &kp N9        &kp N0
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT     ___               &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT     &kp DEL
+          //&sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT     ___               &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT     &kp DEL
+          &kp TAB       &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT         ___           &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          ___           ___           ___           ___           ___               ___           &kp LC(X)     &kp LC(INS)   &kp LS(INS)   ___
+          ___           &kp GRAVE     ___           ___           ___               ___           ___           ___           &kp BSLH      &kp SQT
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                       ___           ___           ___               ___           ___           ___
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
-*/
 
 ZMK_LAYER(num_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
