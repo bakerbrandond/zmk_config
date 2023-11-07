@@ -10,9 +10,10 @@
 #define ___ &trans
 
 #define DEF 0  // layer shortcuts, must match order in which they are defined below
-#define NAV 1
-#define NUM 2
-#define GER 3
+#define LOW 1
+#define RAS 2
+#define FUN 3
+#define MOS 4
 
 /* custom behaviors */
 #include "mouse.dtsi"
@@ -34,12 +35,12 @@ ZMK_BEHAVIOR(ss_cw, tap_dance,
 
 ZMK_BEHAVIOR(td0, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&mo 1>, <&mo 4>, <&tog 4>;
+    bindings = <&mo LOW>, <&mo MOS>, <&tog MOS>;
 )
 
-// tap: backspace | shift + tap: delete | hold: num layer
+// tap: backspace | shift + tap: delete | hold: RAS layer
 ZMK_BEHAVIOR(bs_del_num, mod_morph,
-    bindings = <&lt NUM BSPC>, <&kp DEL>;
+    bindings = <&lt RAS BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
@@ -53,13 +54,13 @@ ZMK_BEHAVIOR(win_sleep, macro,
 // euro sign
 ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
 
-// replace a/o/u/s with German umlauts when NAV and NUM are held jointly
-ZMK_CONDITIONAL_LAYER(NAV NUM, GER)
+// FUN when LOW and RAS are held jointly
+ZMK_CONDITIONAL_LAYER(LOW RAS, FUN)
 
 // combos
 #undef COMBO_TERM
 #define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
-ZMK_COMBO(combo_sleep,  &win_sleep, RT3 RT4, NAV)  // custom sleep macro, only active on NAV layer
+ZMK_COMBO(combo_sleep,  &win_sleep, RT3 RT4, LOW)  // custom sleep macro, only active on LOW layer
 ZMK_COMBO(combo_copy,   &kp LC(C),  LB2 LB3, ALL)  // Ctrl + C, active on all layers
 ZMK_COMBO(combo_paste,  &kp LC(V),  LB1 LB2, ALL)  // Ctrl + V, active on all layers
 
@@ -73,7 +74,7 @@ ZMK_LAYER(base,
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           ___ &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH ___
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                      &kp LCTRL       &td0        &kp SPACE         &kp BSPC      &mo 2        &ss_cw
+                                      &kp LCTRL       &td0        &kp SPACE         &kp BSPC      &mo RAS      &ss_cw
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -122,7 +123,7 @@ ZMK_LAYER(mouse,
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           ___ ___           ___           ___           U_BTN3        ___               ___           ___           ___           ___           ___ ___
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                      ___             &tog 4         ___               ___           ___           ___
+                                      ___             &tog MOS       ___               ___           ___           ___
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
