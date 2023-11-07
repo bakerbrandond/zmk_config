@@ -191,7 +191,7 @@
 #define NUM 2
 #define GER 3
 
-#include "combos.dtsi"  // requires layer aliases
+//#include "combos.dtsi"  // requires layer aliases
 #include "mouse.dtsi"
 #include "extra_keys.h"
 
@@ -230,11 +230,11 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
 ZMK_CONDITIONAL_LAYER(LOW NUM, GER)
 
 // combos
-#undef COMBO_TERM
-#define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
-ZMK_COMBO(combo_sleep,  &win_sleep, RT3 RT4, LOW)  // custom sleep macro, only active on LOW layer
-ZMK_COMBO(combo_copy,   &kp LC(C),  LB2 LB3, ALL)  // Ctrl + C, active on all layers
-ZMK_COMBO(combo_paste,  &kp LC(V),  LB1 LB2, ALL)  // Ctrl + V, active on all layers
+//#undef COMBO_TERM
+//#define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
+//ZMK_COMBO(combo_sleep,  &win_sleep, RT3 RT4, LOW)  // custom sleep macro, only active on LOW layer
+//ZMK_COMBO(combo_copy,   &kp LC(C),  LB2 LB3, ALL)  // Ctrl + C, active on all layers
+//ZMK_COMBO(combo_paste,  &kp LC(V),  LB1 LB2, ALL)  // Ctrl + V, active on all layers
 
 /* keymap */
 
